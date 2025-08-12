@@ -33,7 +33,7 @@ function Project() {
             
         </div>
     </div>
-    );
+    )
 }
 
-export default Project;
+export default Project

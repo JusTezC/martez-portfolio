@@ -1,59 +1,59 @@
-import  { useEffect, useState } from "react";
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import List from '@mui/material/List';
-import ListIcon from '@mui/icons-material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
+import  { useEffect, useState } from "react"
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import CssBaseline from '@mui/material/CssBaseline'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import Divider from '@mui/material/Divider'
+import Drawer from '@mui/material/Drawer'
+import IconButton from '@mui/material/IconButton'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import List from '@mui/material/List'
+import ListIcon from '@mui/icons-material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemText from '@mui/material/ListItemText'
+import MenuIcon from '@mui/icons-material/Menu'
+import Toolbar from '@mui/material/Toolbar'
 
 const drawerWidth = 240;
-const navItems = [['Overview', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Contact', 'contact']];
+const navItems = [['Overview', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Contact', 'contact']]
 
 function Navigation({parentToChild, modeChange}: any) {
 
-  const {mode} = parentToChild;
+  const {mode} = parentToChild
 
-  const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [mobileOpen, setMobileOpen] = useState<boolean>(false)
+  const [scrolled, setScrolled] = useState<boolean>(false)
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setMobileOpen((prevState) => !prevState)
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const navbar = document.getElementById("navigation");
+      const navbar = document.getElementById("navigation")
       if (navbar) {
-        const scrolled = window.scrollY > navbar.clientHeight;
-        setScrolled(scrolled);
+        const scrolled = window.scrollY > navbar.clientHeight
+        setScrolled(scrolled)
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll)
     };
-  }, []);
+  }, [])
 
   const scrollToSection = (section: string) => {
     console.log(section)
-    const expertiseElement = document.getElementById(section);
+    const expertiseElement = document.getElementById(section)
     if (expertiseElement) {
-      expertiseElement.scrollIntoView({ behavior: 'smooth' });
-      console.log('Scrolling to:', expertiseElement);  // Debugging: Ensure the element is found
+      expertiseElement.scrollIntoView({ behavior: 'smooth' })
+      console.log('Scrolling to:', expertiseElement)  // Debugging: Ensure the element is found
     } else {
-      console.error('Element with id "expertise" not found');  // Debugging: Log error if element is not found
+      console.error('Element with id "expertise" not found') // Debugging: Log error if element is not found
     }
   };
 
@@ -71,7 +71,7 @@ function Navigation({parentToChild, modeChange}: any) {
         ))}
       </List>
     </Box>
-  );
+  )
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -118,7 +118,7 @@ function Navigation({parentToChild, modeChange}: any) {
         </Drawer>
       </nav>
     </Box>
-  );
+  )
 }
 
-export default Navigation;
+export default Navigation

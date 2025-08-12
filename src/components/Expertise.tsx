@@ -1,9 +1,8 @@
-// import React from "react";
 import '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact } from '@fortawesome/free-brands-svg-icons';
-import Chip from '@mui/material/Chip';
-import '../assets/styles/Expertise.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faReact } from '@fortawesome/free-brands-svg-icons'
+import Chip from '@mui/material/Chip'
+import '../assets/styles/Expertise.scss'
 
 const labelsFirst = [
     "React",
@@ -50,7 +49,7 @@ function Expertise() {
             </div>
         </div>
     </div>
-    );
+    )
 }
 
-export default Expertise;
+export default Expertise
