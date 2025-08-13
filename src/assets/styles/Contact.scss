@@ -6,6 +6,9 @@
 
 .contact-form {
   padding-top: 20px;
+  input, textarea {
+    color: black !important
+  }
 
   button {
     float: right;
