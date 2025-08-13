@@ -1,6 +1,6 @@
 import { FormEvent, useRef, useState } from 'react'
 import '../assets/styles/Contact.scss'
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import SendIcon from '@mui/icons-material/Send'
@@ -27,26 +27,27 @@ function Contact() {
 
     /* Uncomment below if you want to enable the emailJS */
 
-    // if (name !== '' && email !== '' && message !== '') {
-    //   var templateParams = {
-    //     name: name,
-    //     email: email,
-    //     message: message
-    //   };
+    if (name !== '' && email !== '' && message !== '') {
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        to_name: 'Martez Cathey',
+        to_email: 'justezc@gmail.com',
+        message: message
+      };
 
-    //   console.log(templateParams);
-    //   emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error);
-    //     },
-    //   );
-    //   setName('');
-    //   setEmail('');
-    //   setMessage('');
-    // }
+      emailjs.send('service_b6pci7b', 'template_st3qpa5', templateParams, 'cYodtO-FA4brr7QPc').then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+        },
+        (error) => {
+          console.log('FAILED...', error);
+        },
+      );
+      setName('');
+      setEmail('');
+      setMessage('');
+    }
   };
 
   return (
